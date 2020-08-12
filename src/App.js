@@ -1,11 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import HelloWorld from "./components/HelloWorld";
-import {createStore} from "redux";
-import reducer from "./reducers"
-
-const initialState = {tech: "React"};
-const store = createStore(reducer, initialState);
+import ButtonGroup from "./ButtonGroup"
+import store from "./store";
 
 class App extends Component {
 
@@ -13,6 +10,7 @@ class App extends Component {
         return (
             <div>
                 <HelloWorld tech={store.getState().tech}/>
+                <ButtonGroup technologies={["React", "Elm", "React-Redux"]}/>
             </div>
         );
     }
