@@ -1,10 +1,10 @@
 export default (state, action) => {
 
     switch (action.type) {
-        case "SET_TECHNOLOGY":
+        case "WITHDRAW_MONEY":
             return {
                 ...state,
-                tech: action.text
+                totalAmount: state.totalAmount - action.amount
             };
         default:
             return state;
